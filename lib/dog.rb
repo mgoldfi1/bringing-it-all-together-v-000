@@ -60,7 +60,7 @@ attr_accessor :name, :breed, :id
   end
 
     def self.new_from_db(row)
-      dog = Dog.new(row[1,row[2], id = row[0])
+      dog = Dog.new(row[1],row[2], id = row[0])
 
     end
 
