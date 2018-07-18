@@ -38,7 +38,7 @@ attr_accessor :name, :breed, :id
     sql = "SELECT * FROM dogs WHERE id = ?"
     result = DB[:conn].execute(sql, id)[0]
     attributes = {name: result[1], breed: result[2]}
-    dog = Dog.new(attributes)
+    dog = Dog.new(attributes, id= result[0])
     binding.pry
     dog
   end
