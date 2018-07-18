@@ -50,6 +50,7 @@ attr_accessor :name, :breed, :id
         dog = result[0]
         attributes = {name: dog[1], breed: dog[2]}
         doggie = Dog.new(attributes, id = dog[0])
+        binding.pry
     end
 
   end
