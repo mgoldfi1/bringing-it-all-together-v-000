@@ -52,7 +52,7 @@ attr_accessor :name, :breed, :id
         attributes = {name: dog[1], breed: dog[2]}
         doggie = Dog.new(attributes, id = dog[0])
     else
-      doggie = self.create(attributes)
+      doggie = self.create({name: name,breed: breed})
     end
     doggie
     #binding.pry
