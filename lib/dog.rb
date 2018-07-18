@@ -63,7 +63,7 @@ attr_accessor :name, :breed, :id
       binding.pry
       attributes = {name: row[1], breed: row[2]}
       dog = Dog.new(attributes,id = row[0])
-
+      dog
     end
 
 
