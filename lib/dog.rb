@@ -47,7 +47,7 @@ attr_accessor :name, :breed, :id
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
     result = DB[:conn].execute(sql, name, breed)
     dog = result[0]
-    binding.pry
+    #binding.pry
     attributes = {name: dog[1], breed: dog[2]}
     if !result.empty?
         doggie = Dog.new(attributes, id = dog[0])
