@@ -48,8 +48,8 @@ attr_accessor :name, :breed, :id
     result = DB[:conn].execute(sql, name, breed)
     dog = result[0]
     binding.pry
-    attributes = {name: dog[1], breed: dog[2]} if name && breed
     if !result.empty?
+        attributes = {name: dog[1], breed: dog[2]}
         doggie = Dog.new(attributes, id = dog[0])
     else
       doggie = self.create(attributes)
