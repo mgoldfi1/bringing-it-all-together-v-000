@@ -54,7 +54,7 @@ attr_accessor :name, :breed, :id
       doggie = self.create(attributes)
     end
     doggie
-    binding.pry
+    #binding.pry
 
   end
 
