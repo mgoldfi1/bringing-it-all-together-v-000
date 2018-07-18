@@ -61,7 +61,8 @@ attr_accessor :name, :breed, :id
 
     def self.new_from_db(row)
       binding.pry
-      dog = Dog.new(row[1],row[2], id = row[0])
+      attributes = {name: row[1], breed: row[2]}
+      dog = Dog.new(attributes,id = row[0])
 
     end
 
