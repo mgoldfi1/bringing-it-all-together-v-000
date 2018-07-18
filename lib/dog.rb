@@ -49,6 +49,7 @@ attr_accessor :name, :breed, :id
     if !result.empty?
         dog = result[0]
         doggie = Dog.new(name: dog[1], breed: dog[2], id = dog[0])
+        binding.pry
     end
 
   end
