@@ -46,12 +46,14 @@ attr_accessor :name, :breed, :id
   def self.find_or_create_by(name:,breed:)
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
     result = DB[:conn].execute(sql, name, breed)
+    dog = result[0]
+    attributes = {name: dog[1], breed: dog[2]}
     if !result.empty?
-        dog = result[0]
-        attributes = {name: dog[1], breed: dog[2]}
         doggie = Dog.new(attributes, id = dog[0])
-        binding.pry
+    else
+      doggie = self.create(attributes)
     end
+    doggie
 
   end
 
