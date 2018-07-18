@@ -47,7 +47,7 @@ attr_accessor :name, :breed, :id
     binding.pry
 
     sql = "SELECT * FROM dogs WHERE name = ?, breed = ?"
-    result = DB[:conn].execute(sql,name: breed:)
+    result = DB[:conn].execute(sql, name, breed)
     if !result.empty?
         dog = result[0]
         attributes = {name: dog[1], breed: dog[2]}
